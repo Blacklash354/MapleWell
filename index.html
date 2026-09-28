@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MapleWell - a farming game by Melih Yalçın</title>
+  <meta name="description" content="MapleWell: Grandpa's farm has gone wild. Clear it, plant it, water it with a real hose, and make the valley yours. For iPhone, iPad and PC.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="sign" href="index.html">
+      <span class="logo">MAPLEWELL</span>
+      <span class="tagline">Grandpa's farm has gone wild. The valley is waiting.</span>
+    </a>
+    <nav>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="paper hero">
+      <div>
+        <h1>A small valley, a wild old farm, and a year to make it yours</h1>
+        <p>Grandpa left you his farm, and nature has taken it back. Clear the logs and stones, till the soil, plant your first carrots and drag a real, wobbly garden hose across the field to water them. Restore Grandpa's old buildings, make friends in Maple Town and Willowbrook, and watch the seasons roll over the valley.</p>
+        <p><a class="button" href="support.html">Help &amp; contact</a></p>
+      </div>
+
+      <div class="shots">
+        <img src="img/shot1.png" alt="The farm in the golden hour, with sunflowers and a pond" loading="lazy">
+        <img src="img/shot3.png" alt="The Willowbrook park with a slide, a sandbox and swings" loading="lazy">
+        <img src="img/shot5.png" alt="Inside the fishing shop: an aquarium and today's catch on ice" loading="lazy">
+        <img src="img/shot4.png" alt="A frozen lake in winter" loading="lazy">
+      </div>
+
+      <h2>What you'll do</h2>
+      <ul class="features">
+        <li><b>Farm with real physics</b>Hoses bend around trees, water sprays and splashes, and crops sway when you walk through them.</li>
+        <li><b>Four seasons</b>Each season has its own crops. Snow settles slowly, the lakes freeze over, and there are festivals in spring and autumn.</li>
+        <li><b>A valley full of people</b>Villagers keep their own daily routines, talk to each other and remember your gifts. In the park, the kids really play on the swings.</li>
+        <li><b>Rebuild the farm</b>Restore the shed, the workshop, the storage and the barn. Craft at the workbench and build with stone from the quarry.</li>
+        <li><b>Animals &amp; fishing</b>Chickens, cows, sheep and your own horse, plus fish in the ponds, the river and the sea.</li>
+        <li><b>Play offline</b>Your farm is saved on your device. You don't need an account.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>MapleWell © 2026 Melih Yalçın · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></p>
+  </footer>
+
+  <script>
+    // a few fireflies drifting over the page
+    for (let i = 0; i < 14; i++) {
+      const f = document.createElement("div");
+      f.className = "firefly";
+      f.style.left = Math.random() * 100 + "vw";
+      f.style.top = 40 + Math.random() * 60 + "vh";
+      f.style.animationDelay = (Math.random() * 6) + "s, " + (Math.random() * 3) + "s";
+      document.body.appendChild(f);
+    }
+  </script>
+</body>
+</html>

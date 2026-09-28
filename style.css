@@ -1,0 +1,208 @@
+/* MapleWell website - dusk over the valley, wooden signs, pixel lettering. */
+:root {
+  --sky-top: #1d2340;
+  --sky-mid: #5b3f63;
+  --sky-low: #e0895a;
+  --grass: #3d6b34;
+  --grass-dark: #2b4f26;
+  --wood: #9a6b3d;
+  --wood-light: #b98552;
+  --wood-dark: #5e3f22;
+  --groove: #3a2614;
+  --ink: #2a1a0e;
+  --paper: #f6ecd6;
+  --paper-edge: #e3d2ac;
+  --gold: #ffcf4a;
+  --water: #4aa3ff;
+  --text: #2b2118;
+  --muted: #6b5946;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background:
+    radial-gradient(2px 2px at 12% 18%, #fff8 50%, transparent 51%),
+    radial-gradient(2px 2px at 78% 9%, #fff8 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 45% 6%, #fff6 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 90% 24%, #fff6 50%, transparent 51%),
+    linear-gradient(180deg, var(--sky-top) 0, var(--sky-mid) 340px, var(--sky-low) 560px, var(--grass) 561px, var(--grass-dark) 100%);
+  background-attachment: fixed;
+}
+
+a { color: #1e63b8; text-underline-offset: 3px; }
+a:hover { color: #0f3f7a; }
+
+/* ---------------------------------------------------------------- header: the hanging sign */
+.top {
+  text-align: center;
+  padding: 36px 16px 8px;
+  position: relative;
+}
+.sign {
+  display: inline-block;
+  position: relative;
+  padding: 18px 34px 14px;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 22px, #0000001f 22px 24px),
+    linear-gradient(180deg, var(--wood-light), var(--wood));
+  border: 3px solid var(--ink);
+  box-shadow: 0 6px 0 var(--wood-dark), 0 12px 24px #0006;
+  border-radius: 4px;
+  text-decoration: none;
+  transform: rotate(-1deg);
+}
+.sign::before, .sign::after { /* ropes */
+  content: "";
+  position: absolute;
+  top: -40px;
+  width: 3px;
+  height: 40px;
+  background: #d9c08c;
+}
+.sign::before { left: 28px; }
+.sign::after { right: 28px; }
+.logo {
+  font-family: "Pixelify Sans", "Courier New", monospace;
+  font-weight: 700;
+  font-size: clamp(34px, 8vw, 64px);
+  letter-spacing: 4px;
+  line-height: 1;
+  color: var(--groove);
+  /* carved into the wood: a dark groove with light catching the lower lip */
+  text-shadow: 0 2px 0 #f3c98f, 0 -1px 0 #00000055;
+}
+.tagline {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #2a1a0ecc;
+  font-weight: 700;
+}
+
+nav {
+  margin: 22px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+nav a {
+  font-family: "Pixelify Sans", monospace;
+  font-size: 18px;
+  color: var(--paper);
+  text-decoration: none;
+  padding: 6px 16px;
+  background: var(--wood-dark);
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  box-shadow: 0 3px 0 #0005;
+}
+nav a:hover, nav a[aria-current="page"] { background: var(--wood); color: #fff; }
+
+/* ---------------------------------------------------------------- content: parchment on a board */
+main {
+  max-width: 860px;
+  margin: 36px auto 48px;
+  padding: 0 16px;
+}
+.paper {
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 6px;
+  box-shadow: 0 8px 0 var(--paper-edge), 0 18px 40px #0007;
+  padding: clamp(20px, 5vw, 44px);
+}
+h1, h2, h3 { font-family: "Pixelify Sans", monospace; color: var(--ink); line-height: 1.2; }
+h1 { font-size: 34px; margin: 0 0 6px; }
+h2 { font-size: 24px; margin: 34px 0 8px; padding-bottom: 4px; border-bottom: 3px dashed var(--paper-edge); }
+h3 { font-size: 19px; margin: 22px 0 4px; }
+.meta { color: var(--muted); font-size: 15px; margin: 0 0 18px; }
+ul { padding-left: 22px; }
+li { margin: 4px 0; }
+.note {
+  background: #e8f3ff;
+  border-left: 5px solid var(--water);
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin: 18px 0;
+}
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 10px 0; }
+th, td { border: 2px solid var(--paper-edge); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #efe0bd; font-family: "Pixelify Sans", monospace; font-weight: 500; }
+
+/* ---------------------------------------------------------------- home page */
+.hero { display: grid; gap: 22px; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 18px 0; }
+.shots img {
+  width: 100%;
+  display: block;
+  border: 3px solid var(--ink);
+  border-radius: 4px;
+  image-rendering: pixelated;
+  box-shadow: 0 4px 0 var(--wood-dark);
+}
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 0; list-style: none; }
+.features li {
+  background: #fffaf0;
+  border: 2px solid var(--paper-edge);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin: 0;
+}
+.features b { font-family: "Pixelify Sans", monospace; font-weight: 500; font-size: 18px; display: block; color: var(--ink); }
+.button {
+  display: inline-block;
+  font-family: "Pixelify Sans", monospace;
+  font-size: 20px;
+  color: #fff;
+  background: #2f7d3a;
+  border: 3px solid var(--ink);
+  border-radius: 4px;
+  padding: 8px 20px;
+  text-decoration: none;
+  box-shadow: 0 4px 0 #1c4d23;
+}
+.button:hover { background: #38923f; color: #fff; }
+
+/* ---------------------------------------------------------------- footer: fireflies over the grass */
+footer {
+  text-align: center;
+  color: #e9f2df;
+  font-size: 14px;
+  padding: 10px 16px 40px;
+}
+footer a { color: #fff; }
+.firefly {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff7a0;
+  box-shadow: 0 0 8px 2px #ffe86b;
+  pointer-events: none;
+  animation: drift 9s ease-in-out infinite, blink 2.6s ease-in-out infinite;
+  opacity: 0.8;
+}
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(18px, -14px); }
+  66% { transform: translate(-12px, 10px); }
+}
+@keyframes blink { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.95; } }
+@media (prefers-reduced-motion: reduce) { .firefly { animation: none; } }
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .sign { padding: 14px 18px 10px; }
+  h1 { font-size: 28px; }
+}
